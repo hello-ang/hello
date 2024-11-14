@@ -1,0 +1,651 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>岷县文化宣传</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        /* 设置全局字体和页面边距 */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+           
+        }
+        /* 设置头部样式 */
+        .header {
+            background: linear-gradient(135deg, #f8f8f8 0%, #ffffff 100%);
+            padding: 15px 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            text-align: center;
+        }
+        /* 设置头部图片样式 */
+        .header img {
+            height: 60px;
+            vertical-align: middle;
+            transition: transform 0.3s ease;
+        }
+        /* 设置导航栏样式 */
+        .nav {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: linear-gradient(45deg, #983636, #c84a4a);
+            padding: 0;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 60px;
+            width: 100%;
+        }
+        /* 设置导航链接基础样式 */
+        .nav a {
+            color: #ffffff;
+            text-decoration: none;
+            padding: 0 30px;
+            font-size: 16px;
+            font-weight: 500;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+        /* 设置导航链接悬停效果 */
+        .nav a:hover {
+            background-color: rgba(255, 255, 255, 0.15);
+            color: #fff;
+        }
+        /* 设置激活状态的导航链接 */
+        .nav a.active {
+            background-color: rgba(255, 255, 255, 0.2);
+            color: #fff;
+        }
+        /* 添加导航项之间的分隔线 */
+        .nav a:not(:last-child)::after {
+            content: '';
+            position: absolute;
+            right: 0;
+            top: 20%;
+            height: 60%;
+            width: 1px;
+            background: rgba(255,255,255,0.2);
+        }
+        /* 添加悬停时的下划线效果 */
+        .nav a::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            width: 0;
+            height: 3px;
+            background-color: #fff;
+            transition: all 0.3s ease;
+            transform: translateX(-50%);
+        }
+        .nav a:hover::before,
+        .nav a.active::before {
+            width: 70%;
+        }
+        /* 响应式设计 */
+        @media screen and (max-width: 1200px) {
+            .nav {
+                justify-content: flex-start;
+                overflow-x: auto;
+                padding: 0 10px;
+            }
+            
+            .nav a {
+                padding: 0 20px;
+                font-size: 14px;
+                white-space: nowrap;
+            }
+            
+            .nav a:not(:last-child)::after {
+                display: none;
+            }
+        }
+        @media screen and (max-width: 768px) {
+            .nav a {
+                padding: 0 15px;
+                font-size: 13px;
+            }
+        }
+        /* 设置横幅图片样式 */
+        .banner img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        /* 设置内容区域样式 */
+        .content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        /* 设置轮播图容器样式 */
+        .carousel {
+            width: 100%;
+            overflow: hidden;
+            position: relative;
+        }
+        /* 设置轮播图图片样式 */
+        .carousel img {
+            width: 100%;
+            height: 400px; /* 设置固定高度 */
+            object-fit: cover; /* 调整图片大小适应容器 */
+            display: none;
+        }
+        /* 设置轮播图当前显示图片样式 */
+        .carousel img.active {
+            display: block;
+        }
+        /* 设置轮播图左右按钮样式 */
+        .carousel .prev,
+        .carousel .next {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(0, 0, 0, 0.5);
+            color: #fff;
+            padding: 10px;
+            cursor: pointer;
+        }
+        /* 设置轮播图左按钮位置 */
+        .carousel .prev {
+            left: 10px;
+        }
+        /* 设置轮播图右按钮位置 */
+        .carousel .next {
+            right: 10px;
+        }
+        /* 设置正文样式 */
+        .main-text {
+            margin-top: 20px;
+            line-height: 1.6;
+        }
+        /* 设置嵌套图片样式 */
+        .embedded-image {
+            max-width: 100%;
+            height: auto;
+            float: left;
+            margin-right: 20px;
+            margin-bottom: 10px;
+        }
+        /* 设置小吃盒子样式 */
+        .snack-box-container {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            margin-top: 10px;
+        }
+        .snack-box {
+            width: 30%;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .snack-box img {
+            width: 100%;
+            height: auto;
+            border: 1px solid #ddd;
+            padding: 10px;
+        }
+        .footer {/* 页脚样式 */
+            background-color: #f8f8f8;
+            padding: 20px;
+            text-align: center;
+            font-size: 14px;
+            color: #3c3434;
+            border-top: 1px solid #e7e7e7;
+        }
+        .header-text {
+             font-size: 28px;
+             font-weight: bold;
+             color: #983636;
+             margin: 0 40px;
+             text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+        }
+        /* 设置千年药乡的大小 */
+        /* 设置信息容器的宽度、居中、内边距和阴影效果 */
+         .info-container {
+             width: 80%;
+             margin: 0 auto;
+             padding: 20px;
+             background-color: #ffffff;
+             box-shadow: 0 0 10px rgba(22, 21, 21, 0.1);
+         }
+        /* 设置信息标题的文本居中、字体大小和下边距 */
+        .info-header {
+            color: #983636;
+            font-size: 40px;
+            margin-bottom: 20px;
+        }
+        /* 设置信息项的下边距、内边距和底部边框 */
+        .info-item {
+            margin-bottom: 10px;
+             padding: 10px;
+            border-bottom: 1px solid #e0e0e0;
+        }
+        /* 设置超链接的样式，去除下划线并设置颜色 */
+        .info-item a {
+             text-decoration: none;
+            color: #1b24d4;
+         }
+        /* 设置超链接悬停时的样式，显示下划线 */
+        .info-item a:hover {
+            text-decoration: underline;
+        }
+            /* 设置日期的样式，包括颜色和字体大小 */
+        .date {
+            color: #782828;
+            font-size: 12px;
+        }
+        /* 添加平滑滚动效果 */
+        html {
+            scroll-behavior: smooth;
+        }
+        /* 优化标题样式 */
+        h2 {
+            position: relative;
+            padding-left: 15px;
+            margin: 30px 0 20px;
+        }
+        h2::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 4px;
+            height: 20px;
+            background-color: #c84a4a;
+        }
+        /* 修改小吃展示区域的样式 */
+        .snack-section {
+            margin-top: 50px;
+            padding: 20px 0;
+            background: #f9f9f9;
+        }
+
+        .snack-section h2 {
+            text-align: center;
+            color: #983636;
+            margin-bottom: 30px;
+        }
+
+        .snack-box-container {
+            display: flex;
+            overflow: hidden;
+            position: relative;
+            width: 100%;
+            height: 300px; /* 固定高度 */
+            margin: 20px 0;
+        }
+
+        .snack-box-wrapper {
+            display: flex;
+            animation: scroll 30s linear infinite; /* 30秒完成一次循环 */
+            width: fit-content;
+        }
+
+        .snack-box {
+            width: 280px; /* 固定宽度 */
+            height: 280px; /* 固定高度 */
+            margin: 0 15px;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+            flex-shrink: 0; /* 防止缩 */
+        }
+
+        .snack-box:hover {
+            transform: translateY(-5px);
+        }
+
+        .snack-box img {
+            width: 100%;
+            height: 220px; /* 图片固定高度 */
+            object-fit: cover; /* 保持片比例填充 */
+            border: none;
+            padding: 0;
+        }
+
+        .snack-box p {
+            margin: 0;
+            padding: 15px 0;
+            background: #fff;
+            color: #333;
+            font-size: 16px;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        @keyframes scroll {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(-50%); /* 移动半个容器宽度 */
+            }
+        }
+
+        /* 美化文字样式 */
+        .main-text p {
+            color: #333;
+            font-size: 16px;
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+
+        /* 美化图片样式 */
+        .embedded-image {
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            margin: 20px;
+        }
+
+        /* 美化快讯区域 */
+        .info-container {
+            width: 90%;
+            margin: 40px auto;
+            padding: 30px;
+            background-color: #fff;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            border-radius: 15px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .info-container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(to right, #c84a4a, #983636);
+        }
+
+        .info-header {
+            color: #983636;
+            font-size: 28px;
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid #f0f0f0;
+            position: relative;
+            text-align: center;
+        }
+
+        .info-header::after {
+            content: '新闻动态';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 14px;
+            color: #666;
+            background: #fff;
+            padding: 0 10px;
+        }
+
+        .info-item {
+            margin-bottom: 15px;
+            padding: 15px 20px;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            border-bottom: 1px solid #eee;
+        }
+
+        .info-item:hover {
+            background-color: #f8f8f8;
+            transform: translateX(10px);
+        }
+
+        .info-item .date {
+            min-width: 100px;
+            color: #666;
+            font-size: 14px;
+            padding: 4px 8px;
+            border-radius: 4px;
+            background-color: #f0f0f0;
+            text-align: center;
+            margin-right: 15px;
+        }
+
+        .info-item a {
+            text-decoration: none;
+            color: #333;
+            font-size: 16px;
+            flex: 1;
+            transition: color 0.3s ease;
+        }
+
+        .info-item a:hover {
+            color: #c84a4a;
+            text-decoration: none;
+        }
+
+        /* 添加新闻类型标签 */
+        .news-tag {
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 12px;
+            margin-right: 10px;
+            color: #fff;
+        }
+
+        .tag-culture { background-color: #c84a4a; }
+        .tag-event { background-color: #4a90e2; }
+        .tag-tourism { background-color: #50b674; }
+    </style>
+</head>
+<body>
+    <!-- 头部区域 -->
+        <div class="header">
+             <span class="header-text">千年药乡</span>
+            <img src="./images/LOOG.jpg" alt="岷县文化Logo">
+             <span class="header-text">多彩岷州</span>
+        </div>
+
+    <!-- 导航栏 -->
+    <div class="nav">
+        <a href="index.html" class="active">首页</a>
+        <a href="culture.html">文化特色</a>
+        <a href="tourism.html">旅游信息</a>
+        <a href="history.html">历史背景</a>
+        <a href="specialties.html">特产美食</a>
+        <a href="folklore.html">民俗风情</a>
+        <a href="interaction.html">互动交流</a>
+        <a href="about.html">关于岷县</a>
+    </div>
+
+    <!-- 在内容区域添加新的快速导航模块 -->
+    <div class="quick-links" style="margin-top: 30px; display: flex; justify-content: space-around; flex-wrap: wrap;">
+        <div class="quick-link-item" style="width: 200px; text-align: center; margin: 10px; padding: 15px; background: #f5f5f5; border-radius: 8px;">
+            <i class="fas fa-landmark" style="font-size: 24px; color: #c84a4a;"></i>
+            <h3>文化特色</h3>
+            <p>非遗文化、红色文化、传统技艺</p>
+        </div>
+        <div class="quick-link-item" style="width: 200px; text-align: center; margin: 10px; padding: 15px; background: #f5f5f5; border-radius: 8px;">
+            <i class="fas fa-mountain" style="font-size: 24px; color: #c84a4a;"></i>
+            <h3>旅游资讯</h3>
+            <p>景点介绍、精品线路推荐</p>
+        </div>
+        <div class="quick-link-item" style="width: 200px; text-align: center; margin: 10px; padding: 15px; background: #f5f5f5; border-radius: 8px;">
+            <i class="fas fa-utensils" style="font-size: 24px; color: #c84a4a;"></i>
+            <h3>特产美食</h3>
+            <p>岷县当归、传统心</p>
+        </div>
+        <div class="quick-link-item" style="width: 200px; text-align: center; margin: 10px; padding: 15px; background: #f5f5f5; border-radius: 8px;">
+            <i class="fas fa-users" style="font-size: 24px; color: #c84a4a;"></i>
+            <h3>民俗风情</h3>
+            <p>民族文化、传统节庆</p>
+        </div>
+    </div>
+
+    <!-- 内容区域 -->
+    <div class="content">
+        <!-- 轮播图容器 -->
+        <div class="carousel">
+            <!-- 轮播图图片 -->
+            <img src="./images/长虹桥.jpg" alt="岷县风景1" class="active">
+            <img src="./images/二郎山.jpg" alt="岷县风景2">
+            <img src="./images/岷县城.jpeg" alt="岷县风景3">
+            <img src="./images/当归城.webp" alt="岷县风景4">    
+            <div class="prev">&#10094;</div>
+            <div class="next">&#10095;</div>
+        </div>
+        <!-- 正文内容 -->
+        <div class="main-text">
+           <h2 style="color: #391313;">岷县简介</h2>
+                <img src="./images/文化宣传.webp" alt="岷县非物质文化遗产" class="embedded-image">
+                <p style="text-indent: 2em;">岷县，隶属于甘肃省定西市，位甘肃省南部，定西市南部，地处青藏高原边缘，是甘南草原向黄土高原、陇南山地的过渡地带，境内海拔2040～3754米，素有“陇原旱码头”之称；气候属温带半湿润向高寒湿润气候过渡带，为高原性大陆气候，低温干燥，自然灾害频发，是7·22定西地震的重灾县。总面积3578平方千米； [24]截至2023年末，岷县常住人口41.89万人。 [13]截至2023年6月，岷县辖15个镇、3个乡。 [14]岷县人民政府驻岷阳镇。</p>
+                <p style="text-indent: 2em;">岷县建制最早可追溯到秦王政八年（前239年），时称临洮，是秦长城的西部起点，西魏大统十年（544年），始置岷州，民国二年（1913年），改为岷县，因境内有岷山而得县名，1985年后，划归定西管辖。 [15]岷县是马家窑文化、齐家文化、寺洼文化的发祥地之一； [16]岷县盛产当归、红芪、黄芪、党参等中药材238种，其中以“岷归”最为闻名，是“中国当归之乡”“中国洮砚之乡”“中国花儿之乡”和“联合国民歌考察采录基地”； [16]岷县景点有狼渡滩湿地草原、双燕生态景区、岷州会议会址等。地方特产有岷县当归，蕨麻猪，纹党参等。2020年11月21日，岷县退出贫困县序列。 [</p>
+                <p style="text-indent: 2em;">2023年，岷县地区生产总值完成69.43亿元，按不变价格算，同比增长7.2%。其中：第一产业增加值14.55亿元，同比增长5.9%；第二产业增加值9.14亿元，同比增长14.7%；第三产业增加值45.74亿元，同比增长6.5%。三次产业结构比为20.9:13.2:65.9。</p>
+        </div>
+  
+            <!DOCTYPE html>
+
+        <!-- 信息容器 -->
+        <div class="info-container">
+        <!-- 信息标题 -->
+        <div class="info-header">岷州快讯</div>
+        <!-- 信息项 -->
+        <div class="info-item">
+            <!-- 日期 -->
+            <span class="date">2024-11-08</span>
+            <!-- 超链接 -->
+            <a href="http://wlj.dingxi.gov.cn/art/2024/11/8/art_8523_1777570.html">记录生活·传递美好”2024年岷县“青苗会”暨民俗摄影展正式开幕</a>
+        </div>
+        <!-- 其他信息项，按照上面的格式添加 -->
+        <div class="info-item">
+            <span class="date">2024-11-11</span>
+            <a href="https://baijiahao.baidu.com/s?id=1815438424800803057&wfr=spider&for=pc">“国家级非遗项目：岷县巴当舞服饰全新亮相</a>
+        </div>
+        <div class="info-item">
+            <span class="date">2024-10-24 </span>
+            <a href="https://www.thepaper.cn/newsDetail_forward_29139976">《河西宝卷》《岷县宝卷》交流座谈会在临泽县文化馆功举办</a>
+        </div>
+        <div class="info-item">
+            <span class="date">2024-10-25</span>
+            <a href="https://baijiahao.baidu.com/s?id=1813825536537388156&wfr=spider&for=pc">「馆际交流 互学互鉴」岷县文体广电和旅游局赴嘉峪关市文化馆开展馆际交流</a>
+        </div>
+        <div class="info-item">
+            <span class="date">2024-10-25</span>
+            <a href="https://www.thepaper.cn/newsDetail_forward_28117850">2024年甘肃岷县文化旅游赛马节开幕</a>
+        </div>
+        </div>
+
+
+
+        <!-- 小吃图片盒子模型 -->
+        <div class="snack-section">
+            <h2>岷县特色美食</h2>
+            <div class="snack-box-container">
+                <div class="snack-box-wrapper">
+                    <!-- 第一组图片 -->
+                    <div class="snack-box">
+                        <img src="./images/小吃/点心.webp" alt="岷州点心">
+                        <p>岷州点心</p>
+                    </div>
+                    <div class="snack-box">
+                        <img src="./images/小吃/烧鸡.webp" alt="烧鸡">
+                        <p>烧鸡</p>
+                    </div>
+                    <div class="snack-box">
+                        <img src="./images/小吃/窜盘.jpg" alt="窜盘">
+                        <p>窜盘</p>
+                    </div>
+                    <div class="snack-box">
+                        <img src="./images/小吃/粉鱼.jpg" alt="粉鱼">
+                        <p>粉鱼</p>
+                    </div>
+                    <div class="snack-box">
+                        <img src="./images/小吃/糊糊.png" alt="糊糊">
+                        <p>糊糊</p>
+                    </div>
+                    <div class="snack-box">
+                        <img src="./images/小吃/面片.webp" alt="面片">
+                        <p>面片</p>
+                    </div>
+                    <!-- 复制一组实现无缝轮播 -->
+                    <div class="snack-box">
+                        <img src="./images/小吃/点心.webp" alt="岷州点心">
+                        <p>岷州点心</p>
+                    </div>
+                    <div class="snack-box">
+                        <img src="./images/小吃/烧鸡.webp" alt="烧鸡">
+                        <p>烧鸡</p>
+                    </div>
+                    <div class="snack-box">
+                        <img src="./images/小吃/窜盘.jpg" alt="窜盘">
+                        <p>窜盘</p>
+                    </div>
+                    <div class="snack-box">
+                        <img src="./images/小吃/粉鱼.jpg" alt="粉鱼">
+                        <p>粉鱼</p>
+                    </div>
+                    <div class="snack-box">
+                        <img src="./images/小吃/糊糊.png" alt="糊糊">
+                        <p>糊糊</p>
+                    </div>
+                    <div class="snack-box">
+                        <img src="./images/小吃/面片.webp" alt="面片">
+                        <p>面片</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        // 获取所有轮播图图片
+        const carouselImages = document.querySelectorAll('.carousel img');
+        // 获取左右按钮
+        const prevButton = document.querySelector('.carousel .prev');
+        const nextButton = document.querySelector('.carousel .next');
+        // 初始化当前图片索引
+        let currentIndex = 0;
+
+        // 显示指定索引的图片
+        function showImage(index) {
+            carouselImages.forEach((img, i) => {
+                img.classList.remove('active');
+                if (i === index) {
+                    img.classList.add('active');
+                }
+            });
+        }
+
+        // 左按钮��击事件
+        prevButton.addEventListener('click', () => {
+            currentIndex = (currentIndex - 1 + carouselImages.length) % carouselImages.length;
+            showImage(currentIndex);
+        });
+
+        // 右按钮点击事件
+        nextButton.addEventListener('click', () => {
+            currentIndex = (currentIndex + 1) % carouselImages.length;
+            showImage(currentIndex);
+        });
+
+        // 自动轮播
+        setInterval(() => {
+            currentIndex = (currentIndex + 1) % carouselImages.length;
+            showImage(currentIndex);
+        }, 3000); // 每3秒切换一次
+
+        // 初始化显示第一张图片
+        showImage(currentIndex);
+    </script>
+  </div>
+  <!-- 尾部区域 -->
+  <div class="footer">
+      <p>版权所有 &copy; 2024 千年药乡 多彩岷州  数字媒体学院-数据科学与大数据技术-杨如斌</p>
+  </div>
+  
+</html>

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>互动交流 - 岷县文化宣传</title>
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/interaction.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    <!-- 头部区域 -->
+    <div class="header">
+        <span class="header-text">千年药乡</span>
+        <img src="./images/LOOG.jpg" alt="岷县文化Logo">
+        <span class="header-text">多彩岷州</span>
+    </div>
+
+    <!-- 导航栏 -->
+    <div class="nav">
+        <a href="index.html">首页</a>
+        <a href="culture.html">文化特色</a>
+        <a href="tourism.html">旅游信息</a>
+        <a href="history.html">历史背景</a>
+        <a href="specialties.html">特产美食</a>
+        <a href="folklore.html">民俗风情</a>
+        <a href="interaction.html" class="active">互动交流</a>
+        <a href="about.html">关于岷县</a>
+    </div>
+
+    <div class="content">
+        <!-- 热门话题部分 -->
+        <section id="topics" class="interaction-section">
+            <h2>热门话题</h2>
+            <div class="topics-container">
+                <div class="topic-card">
+                    <div class="topic-header">
+                        <h3>岷县花儿传承与发展</h3>
+                        <span class="topic-meta">
+                            <i class="fas fa-user"></i> 发起人：李文华
+                            <i class="fas fa-clock"></i> 2024-02-20
+                        </span>
+                    </div>
+                    <p class="topic-content">关于如何更好地保护和传承岷县花儿这一非物质文化遗产，希望大家积极讨论。</p>
+                    <div class="topic-stats">
+                        <span><i class="fas fa-eye"></i> 238</span>
+                        <span><i class="fas fa-comment"></i> 23</span>
+                        <span><i class="fas fa-heart"></i> 45</span>
+                    </div>
+                </div>
+
+                <div class="topic-card">
+                    <div class="topic-header">
+                        <h3>岷县旅游发展建议</h3>
+                        <span class="topic-meta">
+                            <i class="fas fa-user"></i> 发起人：王建国
+                            <i class="fas fa-clock"></i> 2024-02-18
+                        </span>
+                    </div>
+                    <p class="topic-content">如何进一步提升岷县的旅游体验，欢迎分享您的建议和想法。</p>
+                    <div class="topic-stats">
+                        <span><i class="fas fa-eye"></i> 186</span>
+                        <span><i class="fas fa-comment"></i> 15</span>
+                        <span><i class="fas fa-heart"></i> 32</span>
+                    </div>
+                </div>
+
+                <div class="topic-card">
+                    <div class="topic-header">
+                        <h3>中药材产业发展讨论</h3>
+                        <span class="topic-meta">
+                            <i class="fas fa-user"></i> 发起人：张医生
+                            <i class="fas fa-clock"></i> 2024-02-15
+                        </span>
+                    </div>
+                    <p class="topic-content">探讨岷县中药材产业的发展前景和机遇，分享您的见解。</p>
+                    <div class="topic-stats">
+                        <span><i class="fas fa-eye"></i> 156</span>
+                        <span><i class="fas fa-comment"></i> 18</span>
+                        <span><i class="fas fa-heart"></i> 28</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 在线留言部分 -->
+        <section id="message" class="interaction-section">
+            <h2>在线留言</h2>
+            <div class="message-form">
+                <form id="messageForm">
+                    <div class="form-group">
+                        <label for="name">姓名：</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">留言内容：</label>
+                        <textarea id="message" name="message" rows="4" required></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn">提交留言</button>
+                </form>
+            </div>
+            <div id="messageContainer" class="message-container">
+                <!-- 留言将通过JavaScript动态添加 -->
+            </div>
+        </section>
+    </div>
+
+    <!-- 页脚部分 -->
+    <div class="footer">
+        <p>版权所有 &copy; 2024 千年药乡 多彩岷州</p>
+    </div>
+
+    <script src="js/interaction.js"></script>
+</body>
+</html> 
