@@ -1,0 +1,414 @@
+/* 页面整体样式 */
+.content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.about-section {
+    margin-bottom: 60px;
+}
+
+.about-section h2 {
+    color: #983636;
+    text-align: center;
+    font-size: 2em;
+    margin-bottom: 40px;
+    position: relative;
+}
+
+.about-section h2::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 3px;
+    background: linear-gradient(to right, #983636, #c84a4a);
+}
+
+/* 城市概况样式 */
+.overview-container {
+    display: flex;
+    gap: 40px;
+    align-items: center;
+    background: #fff;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+}
+
+.overview-image {
+    flex: 0 0 50%;
+    position: relative;
+    overflow: hidden;
+}
+
+.overview-image img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.overview-image:hover img {
+    transform: scale(1.05);
+}
+
+.overview-text {
+    flex: 1;
+    padding: 30px;
+}
+
+.highlight-text {
+    font-size: 1.2em;
+    color: #333;
+    line-height: 1.6;
+    margin-bottom: 30px;
+    border-left: 4px solid #983636;
+    padding-left: 15px;
+}
+
+.overview-stats {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.stat-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 15px;
+    background: #f8f8f8;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+.stat-item:hover {
+    transform: translateY(-5px);
+    background: #fff;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.stat-item i {
+    font-size: 24px;
+    color: #983636;
+}
+
+.stat-info h4 {
+    color: #983636;
+    margin-bottom: 5px;
+}
+
+/* 地理环境样式 */
+.geography-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.geo-card {
+    background: #fff;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.geo-card:hover {
+    transform: translateY(-10px);
+}
+
+.geo-icon {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 20px;
+    background: linear-gradient(135deg, #983636, #c84a4a);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.geo-icon i {
+    font-size: 32px;
+    color: white;
+}
+
+.geo-card h3 {
+    color: #983636;
+    margin-bottom: 15px;
+}
+
+.geo-card p {
+    color: #666;
+    line-height: 1.6;
+}
+
+/* 行政区划样式 */
+.districts-container {
+    background: #fff;
+    border-radius: 15px;
+    padding: 30px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+}
+
+.district-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    gap: 15px;
+    padding: 20px;
+}
+
+.district-item {
+    background: #f8f8f8;
+    padding: 12px 15px;
+    border-radius: 8px;
+    text-align: center;
+    color: #333;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.district-item:hover {
+    background: #983636;
+    color: white;
+    transform: translateY(-3px);
+    box-shadow: 0 4px 10px rgba(152, 54, 54, 0.2);
+}
+
+/* 发展成就样式 */
+.achievements-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+.achievement-card {
+    background: #fff;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.achievement-card:hover {
+    transform: translateY(-10px);
+}
+
+.achievement-icon {
+    width: 70px;
+    height: 70px;
+    margin: 0 auto 20px;
+    background: linear-gradient(135deg, #983636, #c84a4a);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.achievement-icon i {
+    font-size: 28px;
+    color: white;
+}
+
+.achievement-card h3 {
+    color: #983636;
+    margin-bottom: 15px;
+}
+
+.achievement-card p {
+    color: #666;
+    line-height: 1.6;
+}
+
+/* 特色产业部分样式 */
+.industries-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.industry-card {
+    background: #fff;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.industry-card:hover {
+    transform: translateY(-10px);
+}
+
+.industry-icon {
+    width: 70px;
+    height: 70px;
+    background: linear-gradient(135deg, #983636, #c84a4a);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+}
+
+.industry-icon i {
+    font-size: 28px;
+    color: white;
+}
+
+.industry-card h3 {
+    color: #983636;
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.industry-details {
+    list-style: none;
+    padding: 0;
+    margin-top: 15px;
+}
+
+.industry-details li {
+    padding: 8px 0;
+    border-bottom: 1px dashed #eee;
+    color: #666;
+}
+
+.industry-details li:last-child {
+    border-bottom: none;
+}
+
+/* 城市荣誉部分样式 */
+.honors-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.honor-item {
+    background: #fff;
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    transition: transform 0.3s ease;
+}
+
+.honor-item:hover {
+    transform: translateY(-5px);
+}
+
+.honor-icon {
+    font-size: 40px;
+    color: #983636;
+}
+
+.honor-content h3 {
+    color: #983636;
+    margin-bottom: 8px;
+}
+
+.honor-content p {
+    color: #666;
+    font-size: 0.9em;
+}
+
+/* 发展规划部分样式 */
+.development-container {
+    background: #fff;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+}
+
+.development-vision {
+    text-align: center;
+    margin-bottom: 40px;
+    padding: 20px;
+    background: linear-gradient(to right, #f8f8f8, #fff);
+    border-radius: 10px;
+}
+
+.development-vision h3 {
+    color: #983636;
+    margin-bottom: 15px;
+    font-size: 1.5em;
+}
+
+.development-goals {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+}
+
+.goal-item {
+    padding: 20px;
+    background: #f8f8f8;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+.goal-item:hover {
+    transform: translateY(-5px);
+    background: #fff;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.goal-item h4 {
+    color: #983636;
+    margin-bottom: 10px;
+    font-size: 1.2em;
+}
+
+.goal-item p {
+    color: #666;
+    line-height: 1.6;
+}
+
+/* 响应式设计 */
+@media screen and (max-width: 768px) {
+    .overview-container,
+    .districts-container {
+        flex-direction: column;
+    }
+
+    .overview-image,
+    .districts-map {
+        flex: 0 0 300px;
+    }
+
+    .overview-stats {
+        grid-template-columns: 1fr;
+    }
+
+    .geography-container {
+        grid-template-columns: 1fr;
+    }
+
+    .achievements-container {
+        grid-template-columns: 1fr;
+    }
+
+    .industries-container,
+    .honors-container,
+    .development-goals {
+        grid-template-columns: 1fr;
+    }
+
+    .honor-item {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .district-list {
+        grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+        gap: 10px;
+    }
+} 

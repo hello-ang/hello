@@ -1,0 +1,284 @@
+/* 基础样式设置 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.main-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* 英雄区域样式 */
+.hero {
+    height: 500px;
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+                url('../images/界面四/长城.jpg') center/cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 60px;
+    border-radius: 20px;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: inherit;
+    filter: blur(2px);
+    z-index: 0;
+}
+
+.hero-content {
+    text-align: center;
+    color: white;
+    z-index: 1;
+    position: relative;
+}
+
+.hero-content h1 {
+    font-size: 4em;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.hero-content p {
+    font-size: 1.5em;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+/* 章节标题样式 */
+.section-title {
+    text-align: center;
+    font-size: 2.5em;
+    color: #2c3e50;
+    margin-bottom: 40px;
+    position: relative;
+    padding-bottom: 15px;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 3px;
+    background: #e74c3c;
+}
+
+/* 时间轴样式 */
+.timeline-section {
+    padding: 60px 0;
+    background: #f8f9fa;
+    margin-bottom: 60px;
+}
+
+.timeline {
+    position: relative;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 40px 0;
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 2px;
+    height: 100%;
+    background: #e74c3c;
+}
+
+.timeline-item {
+    position: relative;
+    margin-bottom: 60px;
+}
+
+.timeline-dot {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 20px;
+    height: 20px;
+    background: #e74c3c;
+    border-radius: 50%;
+    z-index: 1;
+}
+
+.timeline-content {
+    position: relative;
+    width: calc(50% - 40px);
+    padding: 20px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.timeline-item:nth-child(odd) .timeline-content {
+    left: 0;
+}
+
+.timeline-item:nth-child(even) .timeline-content {
+    left: calc(50% + 40px);
+}
+
+.timeline-content h3 {
+    color: #2c3e50;
+    margin-bottom: 15px;
+}
+
+.timeline-content p {
+    color: #7f8c8d;
+    line-height: 1.6;
+}
+
+.timeline-content img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-top: 15px;
+}
+
+/* 文化遗产样式 */
+.heritage-section {
+    padding: 60px 0;
+    margin-bottom: 60px;
+}
+
+.heritage-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.heritage-card {
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.heritage-card:hover {
+    transform: translateY(-10px);
+}
+
+.heritage-card img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+}
+
+.heritage-content {
+    padding: 20px;
+}
+
+.heritage-content h3 {
+    color: #2c3e50;
+    margin-bottom: 10px;
+}
+
+.heritage-content p {
+    color: #7f8c8d;
+    line-height: 1.6;
+}
+
+/* 历史名人样式 */
+.figures-section {
+    padding: 60px 0;
+    background: #f8f9fa;
+    margin-bottom: 60px;
+}
+
+.figures-carousel {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    padding: 0 20px;
+}
+
+.figure-card {
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.figure-card:hover {
+    transform: translateY(-10px);
+}
+
+.figure-card img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+}
+
+.figure-info {
+    padding: 20px;
+    text-align: center;
+}
+
+.figure-info h3 {
+    color: #2c3e50;
+    margin-bottom: 10px;
+}
+
+.figure-info p {
+    color: #7f8c8d;
+    line-height: 1.6;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+    .hero {
+        height: 300px;
+    }
+
+    .hero-content h1 {
+        font-size: 2.5em;
+    }
+
+    .hero-content p {
+        font-size: 1.2em;
+    }
+
+    .timeline::before {
+        left: 20px;
+    }
+
+    .timeline-dot {
+        left: 20px;
+    }
+
+    .timeline-content {
+        width: calc(100% - 50px);
+        margin-left: 50px;
+    }
+
+    .timeline-item:nth-child(even) .timeline-content {
+        left: 0;
+    }
+
+    .heritage-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .figures-carousel {
+        grid-template-columns: 1fr;
+    }
+}

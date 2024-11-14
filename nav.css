@@ -1,0 +1,95 @@
+/* 设置导航栏样式 */
+.nav {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: linear-gradient(45deg, #983636, #c84a4a);
+    padding: 0;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 60px;
+    width: 100%;
+}
+
+/* 设置导航链接基础样式 */
+.nav a {
+    color: #ffffff;
+    text-decoration: none;
+    padding: 0 30px;
+    font-size: 16px;
+    font-weight: 500;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+/* 设置导航链接悬停效果 */
+.nav a:hover {
+    background-color: rgba(255, 255, 255, 0.15);
+    color: #fff;
+}
+
+/* 设置激活状态的导航链接 */
+.nav a.active {
+    background-color: rgba(255, 255, 255, 0.2);
+    color: #fff;
+}
+
+/* 添加导航项之间的分隔线 */
+.nav a:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 20%;
+    height: 60%;
+    width: 1px;
+    background: rgba(255,255,255,0.2);
+}
+
+/* 添加悬停时的下划线效果 */
+.nav a::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 3px;
+    background-color: #fff;
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
+}
+
+.nav a:hover::before,
+.nav a.active::before {
+    width: 70%;
+}
+
+/* 响应式设计 */
+@media screen and (max-width: 1200px) {
+    .nav {
+        justify-content: flex-start;
+        overflow-x: auto;
+        padding: 0 10px;
+    }
+    
+    .nav a {
+        padding: 0 20px;
+        font-size: 14px;
+        white-space: nowrap;
+    }
+    
+    .nav a:not(:last-child)::after {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .nav a {
+        padding: 0 15px;
+        font-size: 13px;
+    }
+} 

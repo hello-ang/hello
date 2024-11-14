@@ -1,0 +1,339 @@
+/* 民俗风情页面样式 */
+.content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.folklore-section {
+    margin-bottom: 60px;
+}
+
+.folklore-section h2 {
+    color: #983636;
+    text-align: center;
+    font-size: 2em;
+    margin-bottom: 40px;
+    position: relative;
+}
+
+.folklore-section h2::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 3px;
+    background: linear-gradient(to right, #983636, #c84a4a);
+}
+
+/* 花儿演唱展示样式 */
+.folklore-showcase {
+    display: flex;
+    gap: 40px;
+    background: #fff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    padding: 30px;
+}
+
+.showcase-media {
+    flex: 0 0 50%;
+}
+
+.showcase-media video {
+    width: 100%;
+    border-radius: 8px;
+}
+
+.showcase-info {
+    flex: 1;
+}
+
+.showcase-info h3 {
+    color: #983636;
+    margin-bottom: 20px;
+    font-size: 1.8em;
+}
+
+.feature-tags {
+    display: flex;
+    gap: 10px;
+    margin: 20px 0;
+}
+
+.tag {
+    background: #f0f0f0;
+    padding: 5px 12px;
+    border-radius: 15px;
+    font-size: 0.9em;
+    color: #666;
+}
+
+.showcase-details {
+    margin-top: 30px;
+}
+
+.detail-item {
+    margin-bottom: 20px;
+}
+
+.detail-item h4 {
+    color: #983636;
+    margin-bottom: 10px;
+}
+
+/* 节庆展示样式 */
+.festival-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.festival-card {
+    background: #fff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.festival-card:hover {
+    transform: translateY(-10px);
+}
+
+.festival-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.festival-info {
+    padding: 20px;
+}
+
+.festival-time {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 15px 0;
+    color: #666;
+}
+
+.festival-features {
+    display: flex;
+    gap: 10px;
+}
+
+.festival-features span {
+    background: #983636;
+    color: white;
+    padding: 5px 12px;
+    border-radius: 15px;
+    font-size: 0.9em;
+}
+
+/* 婚俗展示样式 */
+.wedding-showcase {
+    background: #fff;
+    border-radius: 12px;
+    padding: 30px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.wedding-process {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 40px;
+    position: relative;
+}
+
+.wedding-process::before {
+    content: '';
+    position: absolute;
+    top: 30px;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: #f0f0f0;
+    z-index: 1;
+}
+
+.process-item {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    flex: 1;
+}
+
+.process-icon {
+    width: 60px;
+    height: 60px;
+    background: #983636;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 15px;
+}
+
+.process-content h4 {
+    color: #983636;
+    margin-bottom: 10px;
+}
+
+.wedding-customs {
+    margin-top: 40px;
+}
+
+.customs-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.custom-item {
+    background: #f8f8f8;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.custom-item h4 {
+    color: #983636;
+    margin-bottom: 10px;
+}
+
+/* 响应式设计 */
+@media screen and (max-width: 768px) {
+    .folklore-showcase {
+        flex-direction: column;
+    }
+
+    .showcase-media {
+        flex: 0 0 auto;
+    }
+
+    .wedding-process {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .wedding-process::before {
+        display: none;
+    }
+}
+
+/* 视频展示部分样式 */
+.video-container {
+    position: relative;
+    width: 100%;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+}
+
+.video-container video {
+    width: 100%;
+    display: block;
+    background: #000;
+}
+
+.showcase-info {
+    padding: 30px;
+    background: linear-gradient(to bottom right, #fff, #f8f8f8);
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+}
+
+.info-header {
+    margin-bottom: 20px;
+}
+
+.info-header h3 {
+    font-size: 2em;
+    color: #983636;
+    margin-bottom: 15px;
+}
+
+.feature-tags {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.tag {
+    background: linear-gradient(135deg, #983636, #c84a4a);
+    color: white;
+    padding: 6px 15px;
+    border-radius: 20px;
+    font-size: 0.9em;
+    box-shadow: 0 2px 8px rgba(152, 54, 54, 0.2);
+    transition: transform 0.3s ease;
+}
+
+.tag:hover {
+    transform: translateY(-2px);
+}
+
+.info-description {
+    margin: 20px 0;
+    line-height: 1.8;
+    color: #444;
+}
+
+.showcase-details {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+    margin-top: 25px;
+}
+
+.detail-item {
+    display: flex;
+    gap: 15px;
+    padding: 20px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease;
+}
+
+.detail-item:hover {
+    transform: translateY(-5px);
+}
+
+.detail-icon {
+    font-size: 24px;
+    color: #983636;
+}
+
+.detail-content h4 {
+    color: #983636;
+    margin-bottom: 8px;
+    font-size: 1.1em;
+}
+
+.detail-content p {
+    color: #666;
+    line-height: 1.6;
+}
+
+/* 响应式调整 */
+@media screen and (max-width: 768px) {
+    .folklore-showcase {
+        flex-direction: column;
+    }
+
+    .showcase-media,
+    .showcase-info {
+        width: 100%;
+    }
+
+    .showcase-details {
+        grid-template-columns: 1fr;
+    }
+} 

@@ -1,0 +1,170 @@
+/* ==========================================================================
+   1. 全局样式
+   ========================================================================== */
+/* 重置默认样式 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* 基础字体和颜色设置 */
+body {
+    font-family: "Microsoft YaHei", sans-serif;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* ==========================================================================
+   2. 布局组件
+   ========================================================================== */
+/* 头部导航样式 */
+.header {
+    background: linear-gradient(135deg, #f8f8f8 0%, #ffffff 100%);
+    padding: 15px 0;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    text-align: center;
+}
+
+.header img {
+    height: 60px;
+    vertical-align: middle;
+    transition: transform 0.3s ease;
+}
+
+.header-text {
+    font-size: 28px;
+    font-weight: bold;
+    color: #983636;
+    margin: 0 40px;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+}
+
+/* 导航栏样式优化 */
+.nav {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: linear-gradient(45deg, #983636, #c84a4a);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 65px;
+    width: 100%;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+.nav a {
+    color: #ffffff;
+    text-decoration: none;
+    padding: 0 25px;
+    font-size: 16px;
+    font-weight: 500;
+    height: 65px;
+    display: flex;
+    align-items: center;
+    transition: all 0.3s ease;
+}
+
+/* 导航链接悬停和激活状态 */
+.nav a:hover,
+.nav a.active {
+    background: rgba(255, 255, 255, 0.15);
+    color: #fff;
+}
+
+.nav a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 3px;
+    background: #fff;
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
+}
+
+.nav a:hover::after,
+.nav a.active::after {
+    width: 70%;
+}
+
+/* 页面内容通用样式 */
+.content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* 页脚样式 */
+.footer {
+    background-color: #f8f8f8;
+    padding: 20px;
+    text-align: center;
+    font-size: 14px;
+    color: #3c3434;
+    border-top: 1px solid #e7e7e7;
+}
+
+/* 响应式设计 */
+@media screen and (max-width: 1200px) {
+    .nav {
+        justify-content: flex-start;
+        overflow-x: auto;
+        padding: 0 10px;
+    }
+    
+    .nav::-webkit-scrollbar {
+        height: 3px;
+    }
+    
+    .nav::-webkit-scrollbar-thumb {
+        background: rgba(255,255,255,0.3);
+        border-radius: 3px;
+    }
+    
+    .nav a {
+        padding: 0 15px;
+        font-size: 15px;
+    }
+    
+    .dropdown-content {
+        left: 0;
+        transform: none;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .nav a {
+        padding: 0 12px;
+        font-size: 14px;
+    }
+    
+    .dropdown-content {
+        width: 100vw;
+        position: fixed;
+        left: 0;
+    }
+}
+
+/* ==========================================================================
+   3. 公共组件
+   ========================================================================== */
+/* 按钮样式 */
+.btn {
+    /* ... */
+}
+
+/* 卡片样式 */
+.card {
+    /* ... */
+}
+
+/* ==========================================================================
+   4. 工具类
+   ========================================================================== */
+/* 辅助类 */
+.clearfix::after {
+    /* ... */
+} 

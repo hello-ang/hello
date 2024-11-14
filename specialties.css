@@ -1,0 +1,341 @@
+/* 基础样式重置 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* 主要内容区域 */
+.main-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* 英雄区域样式 */
+.hero {
+    height: 400px;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+                url('../images/界面五/当归.webp') center/cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 60px;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.hero-content {
+    text-align: center;
+    color: white;
+}
+
+.hero-content h1 {
+    font-size: 3em;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.hero-content p {
+    font-size: 1.2em;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+/* 通用section样式 */
+.section-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.section-header h2 {
+    font-size: 2.5em;
+    color: #2c3e50;
+    margin-bottom: 10px;
+}
+
+.section-header p {
+    color: #7f8c8d;
+    font-size: 1.2em;
+}
+
+/* 药材展示区样式 */
+.herbs-section {
+    margin-bottom: 60px;
+}
+
+.featured-herb {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    margin-bottom: 40px;
+    background: #fff;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.herb-image {
+    position: relative;
+    height: 400px;
+}
+
+.herb-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.certification-badge {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: #e74c3c;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 30px;
+    font-size: 0.9em;
+}
+
+.herb-details {
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.herb-details h3 {
+    font-size: 2em;
+    color: #2c3e50;
+    margin-bottom: 20px;
+}
+
+.herb-description {
+    color: #7f8c8d;
+    line-height: 1.6;
+    margin-bottom: 30px;
+}
+
+.herb-features {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.herb-features li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #2c3e50;
+}
+
+.icon {
+    font-size: 1.5em;
+}
+
+.herbs-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.herb-card {
+    background: #fff;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.herb-card:hover {
+    transform: translateY(-10px);
+}
+
+.herb-card img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+}
+
+.card-content {
+    padding: 20px;
+    text-align: center;
+}
+
+.card-content h4 {
+    color: #2c3e50;
+    margin-bottom: 10px;
+}
+
+.card-content p {
+    color: #7f8c8d;
+}
+
+/* 美食展示区样式 */
+.food-section {
+    margin-bottom: 60px;
+}
+
+.food-showcase {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.food-card {
+    background: #fff;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.food-card:hover {
+    transform: translateY(-10px);
+}
+
+.food-image {
+    height: 250px;
+    overflow: hidden;
+}
+
+.food-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.food-card:hover .food-image img {
+    transform: scale(1.1);
+}
+
+.food-info {
+    padding: 20px;
+}
+
+.food-info h3 {
+    color: #2c3e50;
+    margin-bottom: 10px;
+}
+
+.food-info p {
+    color: #7f8c8d;
+    margin-bottom: 15px;
+}
+
+.tags {
+    display: flex;
+    gap: 10px;
+}
+
+.tags span {
+    background: #f0f2f5;
+    color: #2c3e50;
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 0.9em;
+}
+
+/* 购买指南样式 */
+.buying-guide {
+    margin-bottom: 60px;
+}
+
+.guide-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.guide-box {
+    background: #fff;
+    border-radius: 15px;
+    padding: 30px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.guide-box h3 {
+    color: #2c3e50;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #e74c3c;
+}
+
+.guide-box ul {
+    list-style: none;
+}
+
+.guide-box ul li {
+    margin-bottom: 15px;
+    padding-left: 20px;
+    position: relative;
+    color: #7f8c8d;
+}
+
+.guide-box ul li::before {
+    content: '•';
+    color: #e74c3c;
+    position: absolute;
+    left: 0;
+}
+
+.channel-info {
+    display: grid;
+    gap: 20px;
+}
+
+.channel h4 {
+    color: #2c3e50;
+    margin-bottom: 10px;
+}
+
+.channel p {
+    color: #7f8c8d;
+    margin-bottom: 5px;
+}
+
+.storage-tips {
+    display: grid;
+    gap: 15px;
+}
+
+.storage-tips p {
+    color: #7f8c8d;
+    padding-left: 20px;
+    position: relative;
+}
+
+.storage-tips p::before {
+    content: '✓';
+    color: #27ae60;
+    position: absolute;
+    left: 0;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+    .hero {
+        height: 300px;
+    }
+
+    .hero-content h1 {
+        font-size: 2em;
+    }
+
+    .featured-herb {
+        grid-template-columns: 1fr;
+    }
+
+    .herb-image {
+        height: 300px;
+    }
+
+    .herb-features {
+        grid-template-columns: 1fr;
+    }
+
+    .guide-container {
+        grid-template-columns: 1fr;
+    }
+} 
